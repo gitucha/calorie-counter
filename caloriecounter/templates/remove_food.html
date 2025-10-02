@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-4">Remove Food</h2>
+{% if message %}
+<div class="bg-red-100 text-red-700 p-3 rounded">{{ message }}</div>
+{% endif %}
+<a href="{% url 'view_foods' %}" class="inline-block mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+    Back to Foods
+</a>
+{% endblock %}

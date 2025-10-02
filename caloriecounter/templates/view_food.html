@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-4">Food Items</h2>
+
+{% if foods %}
+<div class="overflow-x-auto">
+<table class="w-full border border-gray-200 bg-white rounded-lg shadow-sm">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="p-2 border">Name</th>
+            <th class="p-2 border">Calories</th>
+            <th class="p-2 border">Date</th>
+            <th class="p-2 border">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for food in foods %}
+        <tr class="hover:bg-gray-50">
+            <td class="p-2 border">{{ food.name }}</td>
+            <td class="p-2 border">{{ food.calories }}</td>
+            <td class="p-2 border">{{ food.date_added }}</td>
+            <td class="p-2 border text-center">
+                <a href="{% url 'remove_food' food.id %}"
+                   class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                   Remove
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<p class="mt-4 font-bold">Total Calories: {{ total_calories }}</p>
+{% else %}
+<p>No food items added yet.</p>
+{% endif %}
+{% endblock %}
