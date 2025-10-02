@@ -21,7 +21,7 @@
             <td class="p-2 border">{{ food.calories }}</td>
             <td class="p-2 border">{{ food.date_added }}</td>
             <td class="p-2 border text-center">
-                <a href="{% url 'remove_food' food.id %}"
+                <a href="/remove_food'{{ food.id }}"
                    class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                    Remove
                 </a>

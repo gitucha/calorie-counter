@@ -6,18 +6,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
-
-    <nav class="bg-blue-600 p-4 mb-6">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/index.html" class="text-white text-xl font-bold">Calorie Tracker</a>
-            <div class="space-x-4">
-                <a href="/add_food.html" class="text-white hover:underline">Add Food</a>
-                <a href="/view_foods" class="text-white hover:underline">View Foods</a>
-                <a href="/calculate_total" class="text-white hover:underline">Total</a>
-                <a href="/reset_calories" class="text-white hover:underline">Reset</a>
-            </div>
-        </div>
-    </nav>
+  
+    {% include 'navbar.html' %}
 
     <main class="container mx-auto px-4">
         {% block content %}{% endblock %}
